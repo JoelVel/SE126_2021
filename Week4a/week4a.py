@@ -17,7 +17,7 @@ houseally = []
 with open("Week4a/lab4A_GOT_NEW.txt") as csvfile:
     
     file = csv.reader(csvfile)
-    print("First Name \t Lastname \t   age \tNickName \t\tHouse Alligence")
+    print("First Name \t Lastname \t\t\tage \tNickName \t\tHouse Alligence")
 
     for rec in file:
 
@@ -28,34 +28,40 @@ with open("Week4a/lab4A_GOT_NEW.txt") as csvfile:
         nickname.append(rec[3])
         houseally.append(rec[4])
 
-        
+    for i in range(0, records):   
        
 
-        #print("{0:10} \t {1:12} \t {2:5} \t {3:5} \t\t {4:7}" .format(firstname[i], lastname[i], age[i], nickname[i], houseally[i]))
+        print("{0:15} \t{1:15} \t{2:1} \t{3:1} \t\t{4:15}".format(firstname[i], lastname[i], age[i], nickname[i], houseally[i]))
 
-        if houseally == "House Stark":
+    for i in range(records):
+
+        if houseally[i] == "House Stark":
             house1 += 1
 
-        elif houseally == "House Tully":
+        elif houseally[i] == "House Tully":
             house2 += 1
 
-        elif houseally == "House Lannister":
+        elif houseally[i] == "House Lannister":
             house3 += 1
 
-        elif houseally == "House Baratheon":
+        elif houseally[i] == "House Baratheon":
             house4 += 1
 
-        elif houseally == "House Targaryen":
+        elif houseally[i] == "House Targaryen":
             house5 += 1
         
-        elif houseally == "Night's Watch":
+        elif houseally[i] == "Night's Watch":
             house6 += 1
+    
+    for i in range(records):
+        average_age = age[i] + age[i] / records
 
 print("Total Amount of people: {}".format(records))
 
 print("House stark: {}".format(house1))
 print("House Tully: {}".format(house2))
 print("House Lannister: {}".format(house3))
-print("House Targaryen: {}".format(house4))
+print("House Baratheon: {}".format(house4))
+print("House Targaryen: {}".format(house5))
 print("Night's Watch: {}".format(house6))
-#print("average_age: {:.0f}".format(average_age))
+print("average age: {:.0f}".format(average_age))
